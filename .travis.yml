@@ -1,8 +1,17 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.4
+- 2.4
 script:
-  - rake
-after_success:
-  - gem build hola.gemspec
+- rake
+before_deploy:
+- gem build hola.gemspec
+deploy:
+  provider: releases
+  api_key:
+    secure: MdxhEaCsZ63COWlYGmYaGmEElGxudsNitU5jyJ3t4vli75b7Ti8xDjoKPmafa0dkUfgAziIea3+r3XxrjDx+kGUR049IDoyhwXZN4eho3fSLatMrLvJPcpVX+0gp2ArihhFXGlKJ0IMP1T9sZ+PZdaGISGmsMjqoPptn+Q2KooXwr8i4Yzy9B9c3PdnSU1iDyYmBHLpgxZXSH0TIsjcxOwcU9Jkt1u8XJcpqtiJgFYDUdYFEQbWcaLA7GpnW0TKJcV1pxMBebmik/E9N6fjcId9p8gpeTVyEEnPBVk8YjQl2pm/ihuj023rgvK5PLzTJOulzX4WsmIl9slHSJLfg5XXJrC0X5pzo0bHyfQ91OkFN4aRUKQK0cG/oEjAkyUy50AAgmPmcJovtmEHlswh5p4Zf4Q8QpB5EQCyXjDBPwD/Be1Si1YSbj0UMmncn4SqpgLkRgnPjmS94aj0MFsCSmqOQlXa3aExbHxgwxxn267T0eLvkFocX1d9rsmHPCDVmfvTK6J/sK/6UIkCEtO1KRsOfAdXsNKKXDMj6GkVXB7ofnF889X3oyyNhIL1+YmDMAhY79uTDRuMEUz/8QWzyc6MHAE9ze4THZQ1Ab6cPbm+IEdckVKFf2Llmg7ZVdnu9fvqDDNFgMSvRaQ9pAJHHFVvf8e0FqGtSFFu8mKZhCXw=
+  file_glob: true
+  file: hola-*.gem
+  skip_cleanup: true
+  on:
+    tags: true
