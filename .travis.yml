@@ -6,6 +6,8 @@ script:
 - rake
 before_deploy:
 - gem build hola.gemspec
+- env
+- ls -ltr
 deploy:
   provider: releases
   api_key:
