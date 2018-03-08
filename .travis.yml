@@ -8,7 +8,8 @@ before_deploy:
 - gem build hola.gemspec
 deploy:
   provider: releases
-  api_key:
+  user: steviewin
+  password:
     secure: WPaq0nsiy4aly/25g510/RJBN3acKg29oI3XcKH/y6ho0IQxlDcaAIeqUPUNKVyojspKDEszHuhv/eXf10h78VVF42DLQJDtbiyNp4BjOfFTmJU65B9XX2vhk/fqjZ+pke0IS59X6/kLJvT9Aou3KKCTkxW8ttB6pajFdflKESpnuEDmlNLAdEF8UHcCQQssE0gLAYwFpJtF8WvI7HLGIUlfiXbQfCzwn+ArTR8QfFwEkU8URY3x/RySJMdqH0nLO7EY6SAVSdMiG8fvJpCRIE8shvdPrgeNqovbdOunffLyHLq1xvUXaG1B3OAmdR2nl5vlft559ANfwxttxKrGpm/+vh/kbfoySsyRQ8W/aliqQiimS1FzT80LY/wAJAZpA5NPaL9V5NZPIhFp/aHo7gdNBSOtuivhFw3pf+ENOCZj9Z1z95w7kinlQktcFR0ITxgAKehSfjjgg7bORsDICAmjexy+x0DKdOS3y7IT0apSMOwWbi0S1OicWgEsjrKujEbtTxLYDTM4HhNrAcW5HlFM+ijP41kQ7WHqS4qEMnfn+x/BSJUS8OctwwE0KH0kW48BkODcOZAt04uHSG5noQ1miNANcI7HPHa7gGMwp/y0L/EdSY42B6rg/AjTjr13QzxjEYzn2Yqlmt9jnPoctvjQiLttdBTHZ+ZQmo0EfEY=
   file_glob: true
   file: hola-*.gem
