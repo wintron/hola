@@ -24,6 +24,10 @@ jobs:
           name: run tests
           command: rake
 
+      - run:
+          name: show the environment
+          command: env
+
       # collect reports
       - store_test_results:
           path: /tmp/test-results
